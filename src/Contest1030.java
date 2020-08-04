@@ -33,8 +33,6 @@ public class Contest1030 {
         String result="";
         for(int i=0;i<strChar.length;i++){
             //toBinaryString(int i)返回变量的二进制表示的字符串
-            //toHexString(int i) 八进制
-            //toOctalString(int i) 十六进制
             result +=Integer.toBinaryString(strChar[i])+ " ";
         }
         return result;

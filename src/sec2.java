@@ -63,7 +63,6 @@ public class sec2 {
         List<List<Integer>> result=new ArrayList<>();//0~7
         List<List<Integer>> temp=new ArrayList<>(8);
         int kingx=king[0],kingy=king[1];
-        //顺时针0~7
         int[] distances=new int[8];
         for (int i=0;i<8;++i){
             distances[i]=Integer.MAX_VALUE;
@@ -72,7 +71,7 @@ public class sec2 {
         for (int i=0;i<queens.length;++i){
             int queenx=queens[i][0],queeny=queens[i][1];
             if (queenx==kingx){
-                if (queeny>kingy){//上
+                if (queeny>kingy){
                     if (queeny-kingy<distances[0]){
                         distances[0]=queeny-kingy;
                         ArrayList al=new ArrayList();
@@ -80,7 +79,7 @@ public class sec2 {
                         temp.set(0,al);
                     }
 
-                }else {//下
+                }else {
                     if (kingy-queeny<distances[4]){
                         distances[4]=kingy-queeny;
                         ArrayList al=new ArrayList();
@@ -89,7 +88,7 @@ public class sec2 {
                     }
                 }
             }else if (queeny==kingy){
-                if (queenx>kingx){//右
+                if (queenx>kingx){
                     if (queenx-kingx<distances[2]){
                         distances[2]=queenx-kingx;
                         ArrayList al=new ArrayList();
@@ -97,7 +96,7 @@ public class sec2 {
                         temp.set(2,al);
                     }
 
-                }else {//左
+                }else {
                     if (kingx-queenx<distances[6]){
                         distances[6]=kingx-queenx;
                         ArrayList al=new ArrayList();
@@ -106,28 +105,28 @@ public class sec2 {
                     }
                 }
             }else  if (Math.abs(queenx-kingx)==Math.abs(queeny-kingy)){
-                if (queenx-kingx>0 && queeny-kingy>0){//右上1
+                if (queenx-kingx>0 && queeny-kingy>0){
                     if (Math.abs(queenx-kingx)+Math.abs(queeny-kingy)<distances[1]){
                         distances[1]=Math.abs(queenx-kingx)+Math.abs(queeny-kingy);
                         ArrayList al=new ArrayList();
                         al.add(queenx);al.add(queeny);
                         temp.set(1,al);
                     }
-                }else if (queenx-kingx>0 && queeny-kingy<0){//右下3
+                }else if (queenx-kingx>0 && queeny-kingy<0){
                     if (Math.abs(queenx-kingx)+Math.abs(queeny-kingy)<distances[3]){
                         distances[3]=Math.abs(queenx-kingx)+Math.abs(queeny-kingy);
                         ArrayList al=new ArrayList();
                         al.add(queenx);al.add(queeny);
                         temp.set(3,al);
                     }
-                }else if (queenx-kingx<0 && queeny-kingy<0){//左下5
+                }else if (queenx-kingx<0 && queeny-kingy<0){
                     if (Math.abs(queenx-kingx)+Math.abs(queeny-kingy)<distances[5]){
                         distances[5]=Math.abs(queenx-kingx)+Math.abs(queeny-kingy);
                         ArrayList al=new ArrayList();
                         al.add(queenx);al.add(queeny);
                         temp.set(5,al);
                     }
-                }else if (queenx-kingx<0 && queeny-kingy>0){//左上7
+                }else if (queenx-kingx<0 && queeny-kingy>0){
                     if (Math.abs(queenx-kingx)+Math.abs(queeny-kingy)<distances[7]){
                         distances[7]=Math.abs(queenx-kingx)+Math.abs(queeny-kingy);
                         ArrayList al=new ArrayList();
