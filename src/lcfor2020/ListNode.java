@@ -1,3 +1,5 @@
+package lcfor2020;
+
 public class ListNode {
       public int val;
       public ListNode next;
